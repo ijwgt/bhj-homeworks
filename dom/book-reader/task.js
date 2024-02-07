@@ -3,7 +3,7 @@ const book = document.querySelector('.book');
 
 function changingTheFront() {
 	fontSizes.forEach((item) => {
-    	item.addEventListener('click', () => {
+    	item.addEventListener('click', (event) => {
 			if (event.target.dataset.size === 'small') {
 				book.classList.remove('font-size_big');
 				book.classList.add('font-size_small');
@@ -24,3 +24,5 @@ function changingTheFront() {
 		})
 	})
 }
+
+changingTheFront()
