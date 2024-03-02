@@ -25,7 +25,7 @@ function createItem(id, quantity, imageUrl){
 };
 
 function incQuantityCart(product, quantity){
-	product.querySelector('cart__product-count').textContent = Number(product.querySelector('.cart__product-count').textContent) + Number(quantity);
+	product.querySelector('.cart__product-count').textContent = Number(product.querySelector('.cart__product-count').textContent) + Number(quantity);
 };
 
 function addItem(product){
