@@ -1,19 +1,16 @@
 'use strict';
 
-const text = document.querySelectorAll('.has-tooltip');
+const links = document.querySelectorAll('.has-tooltip');
 
-text.forEach((item) => {
-	const tooltipElement = document.createElement('div');
-	tooltipElement.textContent = item.title;
-	tooltipElement.classList.add('tooltip');
-	
+links.forEach((item) => {
+	item.insertAdjacentHTML('afterend', '<div class="tooltip" style="left: 0; top: 0"></div>');
 	item.addEventListener('click', (event) => {
 		event.preventDefault();
 
-		tooltipElement.classList.toggle('tooltip_active');
-		item.appendChild(tooltipElement);
-		tooltipElement.style.top = `${item.getBoundingClientRect().bottom}px`;
-		tooltipElement.style.left = `${item.getBoundingClientRect().left}px`;
+		item.nextSibling.classList.toggle('tooltip_active');
+        item.nextSibling.textContent = item.title;
+        item.nextSibling.style.top = `${item.getBoundingClientRect().bottom}px`;
+        item.nextSibling.style.left = `${item.getBoundingClientRect().left}px`;
 	})
 })
 
