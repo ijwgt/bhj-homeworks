@@ -21,10 +21,3 @@ function createItems(value) {
 	tasksList.appendChild(newTask);
 	newTask.outerHTML = `<div class="task"><div class="task__title">${value}</div><a href="#" class="task__remove">&times;</a></div>`;
 }
-
-
-
-
-
-// localStorage.setItem('task', tasksList.querySelector('.task__title').textContent);
-// console.log(localStorage.getItem('task'));

@@ -32,8 +32,9 @@ function addItem(product){
 	product.id = product.dataset.id;
     product.quantity = product.querySelector('.product__quantity-value').textContent;
     product.image = product.querySelector('.product__image').src;
-	if (cartProducts.children.length > 0 && Array.from(cartProducts.children).find(elem => elem.dataset.id === product.id)){
-		incQuantityCart(Array.from(cartProducts.children).find(elem => elem.dataset.id === product.id), product.quantity);
+	const addedProduct = Array.from(cartProducts.children).find(elem => elem.dataset.id === product.id);
+	if (addedProduct){
+		incQuantityCart(addedProduct, product.quantity);
 	} else {
         createItem(product.id, product.quantity, product.image);
     }
