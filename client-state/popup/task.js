@@ -3,9 +3,15 @@ const modalClose = document.querySelector('.modal__close');
 
 modal.classList.add('modal_active');
 
+window.addEventListener('load', () => {
+	if (getCookie('subcribeShown') === 'true') {
+	  modal.classList.remove('modal_active');
+	}
+  })
+
 modalClose.addEventListener('click', () => {
 	modal.classList.remove('modal_active');
-	setCookie('showSubscribe', 'false');
+	setCookie('subcribeShown', 'true');
 })
 
 console.log(document.cookie);
